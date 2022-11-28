@@ -8,6 +8,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.odontocao.util.Util.utilDateToSqlDate;
+
 public class PacienteDaoH2 implements IDao<Paciente> {
     private final static String DB_JDBC_DRIVER = "org.h2.Driver";
     private final static String DB_URL = "jdbc:h2:~/db_clinica;INIT=RUNSCRIPT FROM 'create.sql'";
@@ -33,7 +35,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             preparedStatement.setString(1, paciente.getNome());
             preparedStatement.setString(2, paciente.getSobrenome());
             preparedStatement.setString(3, paciente.getCpf());
-            preparedStatement.setDate(4, util.utilDateToSqlDate(paciente.getData()));
+            preparedStatement.setDate(4, utilDateToSqlDate(paciente.getData()));
             preparedStatement.setInt(5, paciente.getEndereco().getId());
 
             preparedStatement.executeUpdate();
@@ -150,7 +152,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             preparedStatement.setString(1, paciente.getNome());
             preparedStatement.setString(2, paciente.getSobrenome());
             preparedStatement.setString(3, paciente.getCpf());
-            preparedStatement.setDate(4, util.utilDateToSqlDate(paciente.getData()));
+            preparedStatement.setDate(4, utilDateToSqlDate(paciente.getData()));
             preparedStatement.setInt(5, paciente.getEndereco().getId());
             preparedStatement.setInt(6, paciente.getId());
 
