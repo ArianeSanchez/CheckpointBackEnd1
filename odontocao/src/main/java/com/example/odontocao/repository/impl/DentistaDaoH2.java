@@ -8,6 +8,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//precisa testar os erros para saber se está saindo as mensagens
+
 public class DentistaDaoH2 implements IDao<Dentista> {
     final static Logger log = Logger.getLogger(DentistaDaoH2.class);
 
@@ -61,7 +63,7 @@ public class DentistaDaoH2 implements IDao<Dentista> {
             preparedStatement.close();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-            log.error(throwables);
+            log.error(throwables.getMessage());
         }
     }
 
@@ -92,7 +94,7 @@ public class DentistaDaoH2 implements IDao<Dentista> {
             preparedStatement.close();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-            log.error(throwables);
+            log.error(throwables.getMessage());
         }
 
         return dentista;
@@ -125,7 +127,7 @@ public class DentistaDaoH2 implements IDao<Dentista> {
             preparedStatement.close();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-            log.error(throwables);
+            log.error(throwables.getMessage());
         }
 
         return dentistas;
@@ -153,7 +155,8 @@ public class DentistaDaoH2 implements IDao<Dentista> {
 
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-            log.error(throwables);
+            //verificar se o texto está limpo, se não, testar tirando a linha acima
+            log.error(throwables.getMessage());
         }
         return dentista;
     }
