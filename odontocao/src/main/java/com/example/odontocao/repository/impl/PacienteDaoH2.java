@@ -121,7 +121,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 String sobrenome = result.getString("sobrenome");
                 String cpf = result.getString("cpf");
                 Date data = result.getDate("data");
-                int idEndereco = result.getInt("domicilio_id");
+                int idEndereco = result.getInt("idEndereco");
                 Endereco endereco = enderecoDaoH2.buscar(idEndereco);
                 Paciente paciente = new Paciente(idPaciente,nome,sobrenome,cpf,data,endereco);
                 pacientes.add(paciente);

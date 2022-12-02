@@ -17,12 +17,12 @@ public class Endereco {
         this.bairro = bairro;
         this.cidade = cidade;
     }
-    public Endereco(String rua, String numero, String bairro, String cidade) {
-        this.rua = rua;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.cidade = cidade;
-    }
+//    public Endereco(String rua, String numero, String bairro, String cidade) {
+//        this.rua = rua;
+//        this.numero = numero;
+//        this.bairro = bairro;
+//        this.cidade = cidade;
+//    }
 
     public Integer getId() {
         return id;

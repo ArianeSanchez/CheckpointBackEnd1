@@ -26,11 +26,11 @@ public class PacienteService {
         return pacienteIDao.buscarTodos();
     }
 
-    public void eliminar(Integer id) {
+    public void deletar(Integer id) {
         pacienteIDao.deletar(id);
     }
 
-    public Paciente actualizar(Paciente p) {
+    public Paciente atualizar(Paciente p) {
         return pacienteIDao.atualizar(p);
     }
 }

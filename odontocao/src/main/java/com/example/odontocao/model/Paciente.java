@@ -22,14 +22,14 @@ public class Paciente {
         this.endereco = endereco;
     }
 
-    public Paciente(String nome, String sobrenome, String cpf, Date data, Endereco endereco) {
-
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.cpf = cpf;
-        this.data = data;
-        this.endereco = endereco;
-    }
+//    public Paciente(String nome, String sobrenome, String cpf, Date data, Endereco endereco) {
+//
+//        this.nome = nome;
+//        this.sobrenome = sobrenome;
+//        this.cpf = cpf;
+//        this.data = data;
+//        this.endereco = endereco;
+//    }
 
 
     public String getSobrenome() {
@@ -84,10 +84,10 @@ public class Paciente {
     public String toString() {
         return "Paciente{" +
                 "id=" + id +
-                ", nombre='" + nome + '\'' +
-                ", apellido='" + sobrenome + '\'' +
-                ", dni='" + cpf + '\'' +
-                ", fechaIngreso=" + data +
+                ", nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataDeEntrada=" + data +
                 ", endereco=" + endereco +
                 '}';
     }

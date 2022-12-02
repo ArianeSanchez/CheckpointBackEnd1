@@ -12,12 +12,12 @@ public class DentistaService {
         this.dentistaDao = dentistaDao;
     }
 
-    public Dentista registrarOdontologo(Dentista odontologo) {
+    public Dentista registrarDentista(Dentista odontologo) {
         return dentistaDao.salvar(odontologo);
 
     }
 
-    public void eliminar(Integer id) {
+    public void deletar(Integer id) {
         dentistaDao.deletar(id);
     }
 
@@ -29,7 +29,7 @@ public class DentistaService {
         return dentistaDao.buscarTodos();
     }
 
-    public Dentista actualizar(Dentista odontologo) {
+    public Dentista atualizar(Dentista odontologo) {
         return dentistaDao.atualizar(odontologo);
     }
 }

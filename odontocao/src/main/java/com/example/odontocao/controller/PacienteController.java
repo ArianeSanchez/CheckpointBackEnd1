@@ -24,7 +24,7 @@ public class PacienteController {
         ResponseEntity<Paciente> response = null;
 
         if (paciente.getId() != null && pacienteService.buscar(paciente.getId()) != null)
-            response = ResponseEntity.ok(pacienteService.actualizar(paciente));
+            response = ResponseEntity.ok(pacienteService.atualizar(paciente));
         else
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 

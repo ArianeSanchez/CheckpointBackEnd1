@@ -9,16 +9,16 @@ public class Dentista {
     public Dentista() {
     }
 
-    public Dentista(String nombre, String apellido, Integer matricula) {
-        this.nome = nombre;
-        this.sobrenome = apellido;
-        this.matricula = matricula;
-    }
+//    public Dentista(String nome, String sobrenome, Integer matricula) {
+//        this.nome = nobre;
+//        this.sobrenome = sobrenome;
+//        this.matricula = matricula;
+//    }
 
-    public Dentista(Integer id, String nombre, String apellido, Integer matricula) {
+    public Dentista(Integer id, String nome, String sobrenome, Integer matricula) {
         this.id = id;
-        this.nome = nombre;
-        this.sobrenome = apellido;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
         this.matricula = matricula;
     }
 
@@ -56,7 +56,7 @@ public class Dentista {
 
     @Override
     public String toString() {
-        return "Odontologo{" +
+        return "Dentista{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
