@@ -1,13 +1,18 @@
 package com.example.odontocao.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Paciente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
     private String sobrenome;
     private String cpf;
     private Date data;
+    @OneToOne
     private Endereco endereco;
 
     public Paciente() {
