@@ -2,9 +2,11 @@ package com.example.odontocao.service;
 
 import com.example.odontocao.repository.IDao;
 import com.example.odontocao.model.Dentista;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DentistaService {
     private IDao<Dentista> dentistaDao;
 
@@ -33,3 +35,5 @@ public class DentistaService {
         return dentistaDao.atualizar(odontologo);
     }
 }
+
+

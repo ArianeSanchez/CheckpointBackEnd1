@@ -3,6 +3,7 @@ package com.example.odontocao.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Dentista")
 public class Dentista {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

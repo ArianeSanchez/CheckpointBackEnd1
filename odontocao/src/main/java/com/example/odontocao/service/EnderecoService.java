@@ -2,9 +2,11 @@ package com.example.odontocao.service;
 
 import com.example.odontocao.repository.IDao;
 import com.example.odontocao.model.Endereco;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EnderecoService {
     private IDao<Endereco> enderecoDao;
 

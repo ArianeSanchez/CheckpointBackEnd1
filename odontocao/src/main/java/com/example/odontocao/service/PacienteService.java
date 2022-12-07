@@ -2,10 +2,12 @@ package com.example.odontocao.service;
 
 import com.example.odontocao.repository.IDao;
 import com.example.odontocao.model.Paciente;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class PacienteService {
     private IDao<Paciente> pacienteIDao;
 
