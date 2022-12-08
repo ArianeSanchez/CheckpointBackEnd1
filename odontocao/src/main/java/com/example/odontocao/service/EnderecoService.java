@@ -1,5 +1,6 @@
 package com.example.odontocao.service;
-
+import com.example.odontocao.model.User;
+import com.example.odontocao.repository.impl.EnderecoDaoH2;
 import com.example.odontocao.repository.IDao;
 import com.example.odontocao.model.Endereco;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,8 @@ public class EnderecoService {
     }
     public void deletar(Integer id){
         enderecoDao.deletar(id);
+    }
+    public Endereco atualizar(Endereco endereco){
+        return enderecoDao.atualizar(endereco);
     }
 }
