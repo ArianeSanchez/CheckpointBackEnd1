@@ -3,6 +3,7 @@ package com.example.odontocao.controller;
 import com.example.odontocao.repository.impl.PacienteDaoH2;
 import com.example.odontocao.service.PacienteService;
 import com.example.odontocao.model.Paciente;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/pacientes")
 public class PacienteController {
     private PacienteService pacienteService = new PacienteService(new PacienteDaoH2());
+
+    @Autowired
 
     @PostMapping()
     public ResponseEntity<Paciente> registrarPaciente(@RequestBody Paciente paciente) {
@@ -30,4 +33,25 @@ public class PacienteController {
 
         return response;
     }
+
+
+
+    /*
+    @Autowired  // conexão entre eu service e meu model
+    public List<Paciente> getPaciente(){
+    return pacienteService.list
+
+    }
+
+
+
+
+
+
+
+
+
+
+  */
+
 }

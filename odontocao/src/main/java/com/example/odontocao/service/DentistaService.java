@@ -34,6 +34,11 @@ public class DentistaService {
     public Dentista atualizar(Dentista odontologo) {
         return dentistaDao.atualizar(odontologo);
     }
+
+    public Dentista salvar(Dentista odontologo) {
+        return dentistaDao.salvar(odontologo);
+    }
+
 }
 
 
