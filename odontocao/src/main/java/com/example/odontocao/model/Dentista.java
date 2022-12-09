@@ -72,4 +72,5 @@ public class Dentista {
                 ", matricula=" + matricula +
                 '}';
     }
+
 }
