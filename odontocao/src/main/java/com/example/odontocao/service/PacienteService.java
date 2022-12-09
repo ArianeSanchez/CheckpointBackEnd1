@@ -16,7 +16,7 @@ public class PacienteService {
     }
 
     public Paciente salvar(Paciente p) {
-        p.setData(new Date());
+        p.setData(String.valueOf(new Date()));
         return pacienteIDao.salvar(p);
     }
 

@@ -8,8 +8,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.odontocao.util.Util.utilDateToSqlDate;
-
 public class PacienteDaoH2 implements IDao<Paciente> {
     private final static String DB_JDBC_DRIVER = "org.h2.Driver";
     private final static String DB_URL = "jdbc:h2:~/db_clinica;INIT=RUNSCRIPT FROM 'create.sql'";
@@ -35,7 +33,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             preparedStatement.setString(1, paciente.getNome());
             preparedStatement.setString(2, paciente.getSobrenome());
             preparedStatement.setString(3, paciente.getCpf());
-            preparedStatement.setDate(4, utilDateToSqlDate(paciente.getData()));
+            preparedStatement.setString(4, paciente.getData());
             preparedStatement.setInt(5, paciente.getEndereco().getId());
 
             preparedStatement.executeUpdate();
@@ -88,7 +86,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 String nome = result.getString("nome");
                 String sobrenome = result.getString("sobrenome");
                 String cpf = result.getString("cpf");
-                java.sql.Date data = result.getDate("data");
+                String data = result.getString("data");
                 int idEndereco = result.getInt("idEndereco");
                 Endereco endereco = enderecoDaoH2.buscar(idEndereco);
                 paciente = new Paciente(idPaciente,nome,sobrenome,cpf,data,endereco);
@@ -120,7 +118,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 String nome = result.getString("nome");
                 String sobrenome = result.getString("sobrenome");
                 String cpf = result.getString("cpf");
-                Date data = result.getDate("data");
+                String data = result.getString("data");
                 int idEndereco = result.getInt("idEndereco");
                 Endereco endereco = enderecoDaoH2.buscar(idEndereco);
                 Paciente paciente = new Paciente(idPaciente,nome,sobrenome,cpf,data,endereco);
@@ -152,7 +150,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             preparedStatement.setString(1, paciente.getNome());
             preparedStatement.setString(2, paciente.getSobrenome());
             preparedStatement.setString(3, paciente.getCpf());
-            preparedStatement.setDate(4, utilDateToSqlDate(paciente.getData()));
+            preparedStatement.setString(4, paciente.getData());
             preparedStatement.setInt(5, paciente.getEndereco().getId());
             preparedStatement.setInt(6, paciente.getId());
 

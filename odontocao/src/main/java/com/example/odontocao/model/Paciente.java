@@ -12,14 +12,11 @@ public class Paciente {
     private String nome;
     private String sobrenome;
     private String cpf;
-    private Date data;
+    public String data;
     @OneToOne
     private Endereco endereco;
 
-    public Paciente() {
-    }
-
-    public Paciente(Integer id, String nome, String sobrenome, String cpf, Date data, Endereco endereco) {
+    public Paciente(Integer id, String nome, String sobrenome, String cpf, String data, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -27,16 +24,6 @@ public class Paciente {
         this.data = data;
         this.endereco = endereco;
     }
-
-//    public Paciente(String nome, String sobrenome, String cpf, Date data, Endereco endereco) {
-//
-//        this.nome = nome;
-//        this.sobrenome = sobrenome;
-//        this.cpf = cpf;
-//        this.data = data;
-//        this.endereco = endereco;
-//    }
-
 
     public String getSobrenome() {
         return sobrenome;
@@ -70,11 +57,15 @@ public class Paciente {
         this.cpf = cpf;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public String setData() {
+        return data;
+    }
+
+    public void setData(String data) {
         this.data = data;
     }
 
