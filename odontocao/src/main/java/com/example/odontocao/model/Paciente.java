@@ -13,7 +13,8 @@ public class Paciente {
     private String sobrenome;
     private String cpf;
     public String data;
-    @OneToOne
+    @OneToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn (name = "id")
     private Endereco endereco;
 
     public Paciente(Integer id, String nome, String sobrenome, String cpf, String data, Endereco endereco) {
