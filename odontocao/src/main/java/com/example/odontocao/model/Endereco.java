@@ -13,7 +13,10 @@ public class Endereco {
     private String numero;
     private String bairro;
     private String cidade;
-
+    
+    @OneToOne (mappedBy="endereco", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Paciente paciente;
+    
     public Endereco() {
     }
 
