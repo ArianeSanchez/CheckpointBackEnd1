@@ -38,8 +38,8 @@ public class PacienteController {
 
     @DeleteMapping(value = "/delete/{idPaciente}")
     @ResponseBody
-    public ResponseEntity<?> delete(@PathVariable Long idPaciente) {
-        pacienteService.deleteById(idPaciente);
+    public ResponseEntity<?> delete(@PathVariable Integer idPaciente) {
+        pacienteService.deletar(idPaciente);
         return new ResponseEntity<String>("Paciente deletado", HttpStatus.OK);
     }
 
