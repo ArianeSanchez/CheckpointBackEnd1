@@ -16,3 +16,5 @@
               SOBRENOME varchar(255),
               CPF varchar(255),
               DATA Date );
+              
+              // Spring boot dando erro no mapping
