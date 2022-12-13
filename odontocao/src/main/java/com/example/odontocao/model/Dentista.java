@@ -12,7 +12,7 @@ public class Dentista {
     private String sobrenome;
     private Integer matricula;
 
-    @OneToMany
+    @OneToMany(mappedBy = "dentista",cascade = CascadeType.ALL)
     private Paciente paciente;
 
     public Dentista() {
