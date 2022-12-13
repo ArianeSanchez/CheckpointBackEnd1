@@ -2,10 +2,11 @@ package com.example.odontocao.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Paciente")
-public class Paciente {
+public class Paciente{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -13,12 +14,14 @@ public class Paciente {
     private String sobrenome;
     private String cpf;
     public String data;
+
     @OneToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn (name = "endereco_id")
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "paciente",cascade = CascadeType.ALL)
-    
+    public Paciente() {
+    }
+
     public Paciente(Integer id, String nome, String sobrenome, String cpf, String data, Endereco endereco) {
         this.id = id;
         this.nome = nome;
@@ -27,7 +30,6 @@ public class Paciente {
         this.data = data;
         this.endereco = endereco;
     }
-
     public String getSobrenome() {
         return sobrenome;
     }

@@ -1,6 +1,7 @@
 package com.example.odontocao.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Dentista")
@@ -12,8 +13,8 @@ public class Dentista {
     private String sobrenome;
     private Integer matricula;
 
-    @OneToMany(mappedBy = "dentista",cascade = CascadeType.ALL)
-    private Paciente paciente;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Paciente> paciente;
 
     public Dentista() {
     }

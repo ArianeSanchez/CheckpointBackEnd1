@@ -1,42 +1,46 @@
 package com.example.odontocao.service;
 
+import com.example.odontocao.repository.DentistaRepository;
 import com.example.odontocao.repository.IDao;
 import com.example.odontocao.model.Dentista;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class DentistaService {
-    private IDao<Dentista> dentistaDao;
 
-    public DentistaService(IDao<Dentista> dentistaDao) {
-        this.dentistaDao = dentistaDao;
+    @Autowired
+    DentistaRepository dentistaRepository;
+
+    public DentistaService() {
+
     }
 
     public Dentista registrarDentista(Dentista odontologo) {
-        return dentistaDao.salvar(odontologo);
+        return dentistaRepository.save(odontologo);
 
     }
 
     public void deletar(Integer id) {
-        dentistaDao.deletar(id);
+        dentistaRepository.deleteById(id);
     }
 
     public Dentista buscar(Integer id) {
-        return dentistaDao.buscar(id);
+        return dentistaRepository.findById(id).get();
     }
 
     public List<Dentista> buscarTodos() {
-        return dentistaDao.buscarTodos();
+        return dentistaRepository.findAll();
     }
 
     public Dentista atualizar(Dentista odontologo) {
-        return dentistaDao.atualizar(odontologo);
+        return dentistaRepository.save(odontologo);
     }
 
     public Dentista salvar(Dentista odontologo) {
-        return dentistaDao.salvar(odontologo);
+        return dentistaRepository.save(odontologo);
     }
 
 }

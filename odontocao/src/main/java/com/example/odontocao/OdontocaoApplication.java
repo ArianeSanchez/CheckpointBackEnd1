@@ -11,7 +11,6 @@ public class OdontocaoApplication {
 		SpringApplication.run(OdontocaoApplication.class, args);
 		Paciente paciente = new Paciente(1,"Emanuel","Nascimento","123456789","10/12/20220",
 				new Endereco(5,"Rua Almeida Cruz","71","Tubaguá","Imperial"));
-
 		System.out.println(paciente.toString());
 
 	}
