@@ -35,6 +35,12 @@ public class PacienteController {
     }
 
 
+    @DeleteMapping(value = "/delete/{idPaciente}")
+    @ResponseBody
+    public ResponseEntity<?> delete(@PathVariable Long idPaciente) {
+        pacienteService.deleteById(idPaciente);
+        return new ResponseEntity<String>("Paciente deletado", HttpStatus.OK);
+    }
 
     /*
     @Autowired  // conexão entre eu service e meu model
