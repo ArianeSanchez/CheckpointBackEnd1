@@ -17,6 +17,8 @@ public class Paciente {
     @JoinColumn (name = "id")
     private Endereco endereco;
 
+    @OneToMany(mappedBy = "paciente",cascade = CascadeType.ALL)
+    
     public Paciente(Integer id, String nome, String sobrenome, String cpf, String data, Endereco endereco) {
         this.id = id;
         this.nome = nome;
