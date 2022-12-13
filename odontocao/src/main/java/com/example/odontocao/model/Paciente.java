@@ -14,7 +14,7 @@ public class Paciente {
     private String cpf;
     public String data;
     @OneToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn (name = "id")
+    @JoinColumn (name = "endereco_id")
     private Endereco endereco;
 
     @OneToMany(mappedBy = "paciente",cascade = CascadeType.ALL)
