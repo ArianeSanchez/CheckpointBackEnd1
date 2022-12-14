@@ -15,7 +15,7 @@ EnderecoRepository enderecoRepository;
 
     public EnderecoService() {}
 
-    public Endereco registrarDentista(Endereco endereco) {
+    public Endereco registrarEndereco(Endereco endereco) {
         return enderecoRepository.save(endereco);
 
     }

@@ -1,7 +1,9 @@
 package com.example.odontocao.service;
 
 import com.example.odontocao.model.Dentista;
+import com.example.odontocao.model.Endereco;
 import com.example.odontocao.repository.DentistaRepository;
+import com.example.odontocao.repository.EnderecoRepository;
 import com.example.odontocao.repository.IDao;
 import com.example.odontocao.model.Paciente;
 import com.example.odontocao.repository.PacienteRepository;
@@ -11,8 +13,12 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
+
+
 @Service
 public class PacienteService {
+
+
 //    private IDao<Paciente> pacienteIDao;
 //
 //    public PacienteService(IDao<Paciente> pacienteIDao) {
