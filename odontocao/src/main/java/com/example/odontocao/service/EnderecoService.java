@@ -1,33 +1,43 @@
 package com.example.odontocao.service;
-import com.example.odontocao.model.User;
-import com.example.odontocao.repository.impl.EnderecoDaoH2;
-import com.example.odontocao.repository.IDao;
+import com.example.odontocao.model.Dentista;
 import com.example.odontocao.model.Endereco;
+import com.example.odontocao.repository.EnderecoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EnderecoService {
-    private IDao<Endereco> enderecoDao;
+@Autowired
+EnderecoRepository enderecoRepository;
 
-    public EnderecoService(IDao<Endereco> enderecoDao) {
-        this.enderecoDao = enderecoDao;
+
+    public EnderecoService() {}
+
+    public Endereco registrarDentista(Endereco endereco) {
+        return enderecoRepository.save(endereco);
+
     }
-    public Endereco salvar(Endereco d){
-        enderecoDao.salvar(d);
-        return d;
+
+    public void deletar(Integer id) {
+        enderecoRepository.deleteById(id);
     }
-    public Endereco buscar(Integer id){
-        return enderecoDao.buscar(id);
+
+    public Endereco buscar(Integer id) {
+        return enderecoRepository.findById(id).get();
     }
-    public List<Endereco> buscarTodos(){
-        return enderecoDao.buscarTodos();
+
+    public List<Endereco> buscarTodos() {
+        return enderecoRepository.findAll();
     }
-    public void deletar(Integer id){
-        enderecoDao.deletar(id);
+
+    public Endereco atualizar(Endereco endereco) {
+        return enderecoRepository.save(endereco);
     }
-    public Endereco atualizar(Endereco endereco){
-        return enderecoDao.atualizar(endereco);
+
+    public Endereco salvar(Endereco endereco) {
+        return enderecoRepository.save(endereco);
     }
-}
+
+};

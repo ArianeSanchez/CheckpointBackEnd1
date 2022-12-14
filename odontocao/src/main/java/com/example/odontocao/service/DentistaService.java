@@ -14,9 +14,7 @@ public class DentistaService {
     @Autowired
     DentistaRepository dentistaRepository;
 
-    public DentistaService() {
-
-    }
+    public DentistaService() {}
 
     public Dentista registrarDentista(Dentista odontologo) {
         return dentistaRepository.save(odontologo);
