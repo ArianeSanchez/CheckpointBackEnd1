@@ -1,18 +1,17 @@
 package com.example.odontocao.controller;
 
-import com.example.odontocao.repository.impl.PacienteDaoH2;
+import com.example.odontocao.repository.PacienteRepository;
 import com.example.odontocao.service.PacienteService;
 import com.example.odontocao.model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 @RequestMapping("/pacientes")
 public class PacienteController {
-    private PacienteService pacienteService = new PacienteService(new PacienteDaoH2());
+    private PacienteService pacienteService = new PacienteService();
 
     @Autowired
 
